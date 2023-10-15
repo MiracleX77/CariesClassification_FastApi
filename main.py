@@ -31,6 +31,7 @@ async def crop(file: UploadFile = File(...)):
     
     images_data_base64 = []
     for path in image_path:
+        print(path)
         img = Image.open(path)
         images_data_base64.append(image_to_base64(img))
 

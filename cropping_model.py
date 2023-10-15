@@ -60,7 +60,7 @@ def cropping(img_path):
         classname = classNames[int(cls)]
 
         cv2.imwrite(f'{current_directory}/img' + f'/{img_name}-{classname}' + '.jpg', cropped)
-        img_path_list.append('/Users/mrbig/Documents/FastApi/img' + f'/{img_name}-{classname}' + '.jpg')
+        img_path_list.append(f'{current_directory}/img' + f'/{img_name}-{classname}' + '.jpg')
     for (bbox_xyxy, cls) in zip(bbox_xyxys, labels):
         bbox = np.array(bbox_xyxy)
         x1, y1, x2, y2 = bbox[0], bbox[1], bbox[2], bbox[3]
