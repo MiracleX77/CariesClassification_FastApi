@@ -10,7 +10,7 @@ app =FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Replace with the actual origin of your web app
+    allow_origins=["*"],  # Replace with the actual origin of your web app
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -46,4 +46,4 @@ async def crop(file: UploadFile = File(...)):
     return response
     
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=80)
