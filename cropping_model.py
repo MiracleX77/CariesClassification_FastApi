@@ -36,7 +36,7 @@ def cropping(img_path):
     model = YOLO(full_model_path)
 
     result = model(img_path)
-
+    print(result)
     boxes = result[0].plot()
     Image.fromarray(boxes).show()
 
@@ -44,7 +44,7 @@ def cropping(img_path):
     img_name = file_name[:-4]
     count = 0
     #classNames = ['U1', 'U2', 'U3', 'U4', 'U5', 'U6', 'L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'Unknown']
-    classNames = ['23','24','25','26','27','28','33','34','35','36','37','38','object']
+    classNames = ['13','14','15','16','17','18','43','44','45','46','47','48','object']
     color = [[0,0,255], [0,255,0], [255,0,0], [0,255,255], [150,255,150], [255,0,255], [24,67,85], [25,55,123], [14,128,128], [128,0,0], [128,128,0], [0,128,0], [0,128,128]]
     bbox_xyxys = (result[0].boxes.xyxy).tolist()
     labels = result[0].boxes.cls.tolist()
